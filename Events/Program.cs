@@ -1,16 +1,18 @@
-using BusinessLogicLayer.MappingProfiles;
-using Events.Extensions;
-using Events.Middlewares;
 using Microsoft.AspNetCore.HttpOverrides;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
+using Events.API.Extensions;
+using Events.Application.MappingProfiles;
+using Events.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureRepositoryManager();
-builder.Services.ConfigureServiceManager();
+builder.Services.ConfigureAuthenticationService();
+builder.Services.ConfigureTokenService();
+builder.Services.ConfigureNotificationService();
 builder.Services.AddRoleRequirementHandler();
 builder.Services.AddValidation();
 builder.Services.AddFluentValidationAutoValidation();
@@ -25,6 +27,7 @@ builder.Services.ConfigureSwagger();
 builder.Services.AddAutoMapper(typeof(EventMappingProfile).Assembly);
 builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.AddJwtConfiguration(builder.Configuration);
+builder.Services.AddMediatR();
 
 
 var app = builder.Build();

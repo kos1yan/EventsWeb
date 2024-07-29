@@ -1,9 +1,11 @@
-﻿using BusinessLogicLayer.Services;
+﻿using Events.Application.UseCases.Notifications.Commands;
+using Events.Domain.Entities.ConfigurationModels;
+using Events.Domain.RequestFeatures;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Shared.RequestFeatures;
 
-namespace Events.Controllers
+namespace Events.API.Controllers
 {
     [Route("api/notifications")]
     [ApiController]
@@ -11,18 +13,18 @@ namespace Events.Controllers
     [ApiExplorerSettings(GroupName = "v1")]
     public class NotificationsController : ControllerBase
     {
-        private readonly IServiceManager _service;
+        private readonly ISender _sender;
 
-        public NotificationsController(IServiceManager service)
+        public NotificationsController(ISender sender)
         {
-            _service = service;
+            _sender = sender;
         }
 
         [HttpPost]
-        //[Authorize(UserRoles.Admin)]
-        public async Task<IActionResult> SendNotification([FromBody] NotificationRequest request)
+        [Authorize(UserRoles.Admin)]
+        public async Task<IActionResult> SendNotification([FromBody] NotificationRequest request, CancellationToken token)
         {
-            await _service.NotificationService.SendMessageAsync(request, false);
+            await _sender.Send(new SendMessageCommand(request, trackChanges : false), token);
 
             return Ok();
         }

@@ -1,7 +1,7 @@
-﻿using DataAccessLayer.DbContext;
-using DataAccessLayer.Entities;
-using DataAccessLayer.Repositories.Implementations;
-using Shared.RequestFeatures;
+﻿using Events.Domain.Entities;
+using Events.Domain.RequestFeatures;
+using Events.Infrastructure.DbContext;
+using Events.Infrastructure.Repositories;
 
 namespace Events.Tests.Repositories
 {
@@ -23,10 +23,11 @@ namespace Events.Tests.Repositories
 
             var memberId = new Guid("d8541560-f9ff-4484-b6cd-544498669cc7");
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _memberRepository.GetMemberAsync(memberId, trackChanges);
+            var result = await _memberRepository.GetMemberAsync(memberId, trackChanges, token);
 
             //Assert
 
@@ -42,10 +43,11 @@ namespace Events.Tests.Repositories
             var eventId = new Guid("e0e44b16-757f-48d9-ac03-61fa3662559c");
             var userId = "dd1513b5-6f40-49f4-b90d-18f6efd50a76";
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _memberRepository.GetMemberAsync(userId, eventId, trackChanges);
+            var result = await _memberRepository.GetMemberAsync(userId, eventId, trackChanges, token);
 
             //Assert
 
@@ -61,10 +63,11 @@ namespace Events.Tests.Repositories
 
             var eventId = new Guid("e0e44b16-757f-48d9-ac03-61fa3662559c");
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _memberRepository.GetMembersAsync(eventId, trackChanges);
+            var result = await _memberRepository.GetMembersAsync(eventId, trackChanges, token);
 
             //Assert
 
@@ -83,10 +86,11 @@ namespace Events.Tests.Repositories
                 Date = "Date1"
             };
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _memberRepository.GetUserEventsAsync(userId, eventParameters, trackChanges);
+            var result = await _memberRepository.GetUserEventsAsync(userId, eventParameters, trackChanges, token);
 
             //Assert
 
@@ -106,10 +110,11 @@ namespace Events.Tests.Repositories
                 Category = 1
             };
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _memberRepository.GetUserEventsAsync(userId, eventParameters, trackChanges);
+            var result = await _memberRepository.GetUserEventsAsync(userId, eventParameters, trackChanges, token);
 
             //Assert
 
@@ -129,10 +134,11 @@ namespace Events.Tests.Repositories
                 Adress = "Adress1"
             };
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _memberRepository.GetUserEventsAsync(userId, eventParameters, trackChanges);
+            var result = await _memberRepository.GetUserEventsAsync(userId, eventParameters, trackChanges, token);
 
             //Assert
 
@@ -152,10 +158,11 @@ namespace Events.Tests.Repositories
                 SearchByName = "Na"
             };
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _memberRepository.GetUserEventsAsync(userId, eventParameters, trackChanges);
+            var result = await _memberRepository.GetUserEventsAsync(userId, eventParameters, trackChanges, token);
 
             //Assert
 

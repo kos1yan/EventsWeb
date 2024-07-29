@@ -1,7 +1,7 @@
-﻿using DataAccessLayer.DbContext;
-using DataAccessLayer.Entities;
-using DataAccessLayer.Repositories.Implementations;
-using Shared.RequestFeatures;
+﻿using Events.Domain.Entities;
+using Events.Domain.RequestFeatures;
+using Events.Infrastructure.DbContext;
+using Events.Infrastructure.Repositories;
 
 namespace Events.Tests.Repositories
 {
@@ -23,10 +23,11 @@ namespace Events.Tests.Repositories
 
             var eventId = new Guid("e0e44b16-757f-48d9-ac03-61fa3662559c");
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _eventRepository.GetEventAsync(eventId, trackChanges);
+            var result = await _eventRepository.GetEventAsync(eventId, trackChanges, token);
 
             //Assert
 
@@ -45,10 +46,11 @@ namespace Events.Tests.Repositories
                 PageSize = 1,
             };
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges);
+            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges, token);
 
             //Assert
 
@@ -65,10 +67,11 @@ namespace Events.Tests.Repositories
                 Date = "Date2"
             };
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges);
+            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges, token);
 
             //Assert
 
@@ -87,10 +90,11 @@ namespace Events.Tests.Repositories
                 Category = 1
             };
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges);
+            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges, token);
 
             //Assert
 
@@ -108,10 +112,11 @@ namespace Events.Tests.Repositories
                 Adress = "Adress2"
             };
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges);
+            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges, token);
 
             //Assert
 
@@ -130,10 +135,11 @@ namespace Events.Tests.Repositories
                 SearchByName = "Na"
             };
             var trackChanges = false;
+            var token = CancellationToken.None;
 
             //Act
 
-            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges);
+            var result = await _eventRepository.GetEventsAsync(eventParameters, trackChanges, token);
 
             //Assert
 

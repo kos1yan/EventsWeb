@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Events\Events.csproj" />
+    <ProjectReference Include="..\Events\Events.API.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
-﻿using FluentValidation;
-using Shared.RequestFeatures;
+﻿using Events.Domain.RequestFeatures;
+using FluentValidation;
 
-namespace BusinessLogicLayer.Validators
+namespace Events.Application.Validators
 {
     public class NotificationRequestValidator : AbstractValidator<NotificationRequest>
     {

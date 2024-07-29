@@ -1,8 +1,8 @@
-﻿using Events.Middlewares.Models;
+﻿using Events.API.Middlewares.Models;
+using Events.Domain.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
-using Shared.Exceptions;
 
-namespace Events.Middlewares
+namespace Events.API.Middlewares
 {
     public static class ExceptionMiddlewareExtensions
     {

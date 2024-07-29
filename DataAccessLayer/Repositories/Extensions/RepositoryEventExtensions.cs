@@ -1,6 +1,6 @@
-﻿using DataAccessLayer.Entities;
+﻿using Events.Domain.Entities;
 
-namespace DataAccessLayer.Repositories.Extensions
+namespace Events.Infrastructure.Repositories.Extensions
 {
     public static class RepositoryEventExtensions
     {

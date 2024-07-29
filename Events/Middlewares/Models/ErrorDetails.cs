@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace Events.Middlewares.Models
+namespace Events.API.Middlewares.Models
 {
     public class ErrorDetails
     {

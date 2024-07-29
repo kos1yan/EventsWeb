@@ -1,7 +1,7 @@
-﻿using FluentValidation;
-using Shared.DataTransferObjects.Event;
+﻿using Events.Application.DataTransferObjects.Event;
+using FluentValidation;
 
-namespace BusinessLogicLayer.Validators
+namespace Events.Application.Validators
 {
     public class EventForCreationDtoValidator : AbstractValidator<EventForCreationDto>
     {

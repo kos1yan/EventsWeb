@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using DataAccessLayer.Entities;
+using Events.Domain.Entities;
 
-namespace DataAccessLayer.DbContext.Configuration
+namespace Events.Infrastructure.DbContext.Configuration
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {

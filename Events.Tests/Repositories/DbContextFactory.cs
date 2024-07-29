@@ -1,5 +1,5 @@
-﻿using DataAccessLayer.DbContext;
-using DataAccessLayer.Entities;
+﻿using Events.Domain.Entities;
+using Events.Infrastructure.DbContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace Events.Tests.Repositories

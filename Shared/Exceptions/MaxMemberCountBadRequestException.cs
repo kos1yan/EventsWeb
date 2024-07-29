@@ -1,5 +1,5 @@
 ﻿
-namespace Shared.Exceptions
+namespace Events.Domain.Exceptions
 {
     public sealed class MaxMemberCountBadRequestException : BadRequestException
     {

@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Events\Events.csproj", "{DA9F9AAC-224B-4C77-9E87-41015FE1E566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.API", "Events\Events.API.csproj", "{DA9F9AAC-224B-4C77-9E87-41015FE1E566}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{C6608683-CFDD-43BA-B692-AFFA009E6113}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.Infrastructure", "DataAccessLayer\Events.Infrastructure.csproj", "{C6608683-CFDD-43BA-B692-AFFA009E6113}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{A0DC8919-05EA-43E1-B693-AD3031F0C69D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.Application", "BusinessLogicLayer\Events.Application.csproj", "{A0DC8919-05EA-43E1-B693-AD3031F0C69D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{C7368BBF-075A-44A1-A23D-98B6CE7B39E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.Domain", "Shared\Events.Domain.csproj", "{C7368BBF-075A-44A1-A23D-98B6CE7B39E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.Tests", "Events.Tests\Events.Tests.csproj", "{0F5C4929-E3FE-42C3-AD96-729043F6D306}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.Tests", "Events.Tests\Events.Tests.csproj", "{0F5C4929-E3FE-42C3-AD96-729043F6D306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

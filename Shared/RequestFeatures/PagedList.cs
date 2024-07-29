@@ -1,5 +1,5 @@
 ﻿
-namespace Shared.RequestFeatures
+namespace Events.Domain.RequestFeatures
 {
     public class PagedList<T> : List<T>
     {

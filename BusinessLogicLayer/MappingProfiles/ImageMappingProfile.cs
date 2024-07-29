@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using DataAccessLayer.Entities;
-using Shared.DataTransferObjects.Image;
+using Events.Application.DataTransferObjects.Image;
+using Events.Domain.Entities;
 
-namespace BusinessLogicLayer.MappingProfiles
+namespace Events.Application.MappingProfiles
 {
     public class ImageMappingProfile : Profile
     {

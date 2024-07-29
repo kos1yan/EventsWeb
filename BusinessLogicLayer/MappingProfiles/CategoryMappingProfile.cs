@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using DataAccessLayer.Entities;
-using Shared.DataTransferObjects.Category;
+using Events.Application.DataTransferObjects.Category;
+using Events.Domain.Entities;
 
-namespace BusinessLogicLayer.MappingProfiles
+namespace Events.Application.MappingProfiles
 {
     public class CategoryMappingProfile : Profile
     {

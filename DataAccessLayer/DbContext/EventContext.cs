@@ -1,9 +1,9 @@
-﻿using DataAccessLayer.DbContext.Configuration;
-using DataAccessLayer.Entities;
+﻿using Events.Domain.Entities;
+using Events.Infrastructure.DbContext.Configuration;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataAccessLayer.DbContext
+namespace Events.Infrastructure.DbContext
 {
     public class EventContext : IdentityDbContext<User>
     {

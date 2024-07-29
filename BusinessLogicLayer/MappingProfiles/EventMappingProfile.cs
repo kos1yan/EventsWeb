@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using DataAccessLayer.Entities;
-using Shared.DataTransferObjects.Event;
+using Events.Application.DataTransferObjects.Event;
+using Events.Domain.Entities;
 
-namespace BusinessLogicLayer.MappingProfiles
+namespace Events.Application.MappingProfiles
 {
     public class EventMappingProfile : Profile
     {

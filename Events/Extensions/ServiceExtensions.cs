@@ -1,21 +1,22 @@
-﻿using DataAccessLayer.DbContext;
-using DataAccessLayer.Entities;
-using DataAccessLayer.Repositories.Implementations;
-using DataAccessLayer.Repositories;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using DataAccessLayer.Entities.ConfigurationModels;
-using BusinessLogicLayer.Services.Implementations;
-using BusinessLogicLayer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using FluentValidation;
-using BusinessLogicLayer.Validators;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
+using Events.Application.UseCases;
+using Events.Infrastructure.Repositories;
+using Events.Infrastructure.DbContext;
+using Events.Domain.Entities;
+using Events.Application.Interfaces;
+using Events.Domain.Entities.ConfigurationModels;
+using Events.Application.Validators;
+using Events.Infrastructure.Auth;
+using Events.Infrastructure.Notifications;
 
-namespace Events.Extensions
+namespace Events.API.Extensions
 {
     public static class ServiceExtensions
     {
@@ -53,7 +54,9 @@ namespace Events.Extensions
         }
 
         public static void ConfigureRepositoryManager(this IServiceCollection services) => services.AddScoped<IRepositoryManager, RepositoryManager>();
-        public static void ConfigureServiceManager(this IServiceCollection services) => services.AddScoped<IServiceManager, ServiceManager>();
+        public static void ConfigureAuthenticationService(this IServiceCollection services) => services.AddScoped<IAuthenticationService, AuthenticationService>();
+        public static void ConfigureTokenService(this IServiceCollection services) => services.AddScoped<ITokenService, TokenService>();
+        public static void ConfigureNotificationService(this IServiceCollection services) => services.AddScoped<INotificationService, NotificationService>();
         public static void AddRoleRequirementHandler(this IServiceCollection services) => services.AddScoped<IAuthorizationHandler, RoleRequirementHandler>();
         public static void AddAuthorizationPolicy(this IServiceCollection services)
         {
@@ -135,8 +138,11 @@ namespace Events.Extensions
                 });
 
             });
+        }
 
-
+        public static void AddMediatR(this IServiceCollection services)
+        {
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(AssemblyReference).Assembly));
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿using DataAccessLayer.Entities.ConfigurationModels;
+﻿using Events.Domain.Entities.ConfigurationModels;
+using Events.Domain.Exceptions;
 using Microsoft.AspNetCore.Authorization;
-using Shared.Exceptions;
 
-namespace Events.Extensions
+namespace Events.API.Extensions
 {
     public class RoleRequirementHandler : AuthorizationHandler<RoleRequirement>
     {

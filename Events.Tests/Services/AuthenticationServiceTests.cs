@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using BusinessLogicLayer.MappingProfiles;
-using BusinessLogicLayer.Services.Implementations;
-using DataAccessLayer.Entities;
-using DataAccessLayer.Repositories;
+using Events.Application.DataTransferObjects.User;
+using Events.Application.Interfaces;
+using Events.Application.MappingProfiles;
+using Events.Domain.Entities;
+using Events.Domain.Exceptions;
+using Events.Infrastructure.Auth;
 using Moq;
-using Shared.DataTransferObjects.User;
-using Shared.Exceptions;
 
 namespace Events.Tests.Services
 {

@@ -1,11 +1,11 @@
-﻿using BusinessLogicLayer.Services.Implementations;
-using DataAccessLayer.Entities;
-using DataAccessLayer.Entities.ConfigurationModels;
-using DataAccessLayer.Repositories;
+﻿using Events.Application.DataTransferObjects.Token;
+using Events.Application.Interfaces;
+using Events.Domain.Entities;
+using Events.Domain.Entities.ConfigurationModels;
+using Events.Domain.Exceptions;
+using Events.Infrastructure.Auth;
 using Microsoft.Extensions.Options;
 using Moq;
-using Shared.DataTransferObjects.Token;
-using Shared.Exceptions;
 
 namespace Events.Tests.Services
 {

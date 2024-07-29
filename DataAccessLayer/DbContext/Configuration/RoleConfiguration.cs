@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using DataAccessLayer.Entities.ConfigurationModels;
+using Events.Domain.Entities.ConfigurationModels;
 
-namespace DataAccessLayer.DbContext.Configuration
+namespace Events.Infrastructure.DbContext.Configuration
 {
     public class RoleConfiguration : IEntityTypeConfiguration<IdentityRole>
     {
